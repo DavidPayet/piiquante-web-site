@@ -5,10 +5,10 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 
 exports.signup = (req, res, next) => {
-  // crypte le mot de passe / Cost factor = 10 -> 2^10 = 1024 fois consecutifs
+  // hash le mot de passe / Cost factor = 10 -> 2^10 = 1024 fois consecutifs
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
-      // Crée un nouveau User avec le mot de passe crypté
+      // Crée un nouveau User avec le mot de passe hashé
       const user = new User({
         email: req.body.email,
         password: hash
