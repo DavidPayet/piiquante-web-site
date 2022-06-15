@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middlewares/auth');
 const sauceCtrl = require('../controllers/sauces');
+const likeCtrl = require('../controllers/like');
 const multer = require('../middlewares/multer-config');
 
 // Crée une sauce + auth de sécurité + multer pour les images
@@ -14,5 +15,7 @@ router.delete('/:id', auth, sauceCtrl.deleteSauce)
 router.get('/:id', auth, sauceCtrl.getOneSauce)
 // Récupère toutes les sauces
 router.get('/', auth, sauceCtrl.getAllSauces)
+// Route pour les likes/dislikes
+router.post('/:id/like', auth, likeCtrl.likeSauce)
 
 module.exports = router;
