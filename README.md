@@ -12,28 +12,3 @@ For running this project on a web interface, you have to use [this frontend](htt
 
 ## The server is listening on 
 `http://localhost:3000`
-
-## Routes
-### Create an account (POST method)
-http://localhost:3000/api/auth/signup
-
-### Login to an account (POST method)
-http://localhost:3000/api/auth/login
-
-### Create a new sauce (POST method)
-http://localhost:3000/api/sauces/
-
-### Modify a sauce (PUT method)
-http://localhost:3000/api/sauces/:id
-
-### Delete a sauce (DELETE method)
-http://localhost:3000/api/sauces/:id
-
-### Get a selected sauce (GET method)
-http://localhost:3000/api/sauces/:id
-
-### Get all sauces (GET method)
-http://localhost:3000/api/sauces/
-
-### Like/Dislike a sauce (POST method)
-http://localhost:3000/api/sauces/:id/like

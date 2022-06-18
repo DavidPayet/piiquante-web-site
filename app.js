@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 const saucesRoutes = require('./routes/sauces');
-const userRoutes = require('./routes/user');
+const usersRoutes = require('./routes/users');
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 
 // Accès aux routes principales
 app.use('/api/sauces', saucesRoutes);
-app.use('/api/auth', userRoutes);
+app.use('/api/auth', usersRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Export de l'application
